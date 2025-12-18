@@ -1,4 +1,9 @@
+// Enable JS-only styles (e.g., reveal animations). If a runtime error occurs,
+// remove the class to avoid hiding content.
 document.documentElement.classList.add("js");
+const __disableJsClass = () => document.documentElement.classList.remove("js");
+window.addEventListener("error", __disableJsClass);
+window.addEventListener("unhandledrejection", __disableJsClass);
 
 document.addEventListener("DOMContentLoaded", () => {
   if (window.lucide && typeof window.lucide.createIcons === "function") {
@@ -188,21 +193,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 스크롤 리빌 애니메이션 (기존 .reveal)
   const revealItems = document.querySelectorAll(".reveal");
-  if (revealItems.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    revealItems.forEach((el) => observer.observe(el));
-  } else {
-    revealItems.forEach((el) => el.classList.add("visible"));
+  const canObserve = "IntersectionObserver" in window;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (revealItems.length) {
+    if (canObserve && !reduceMotion) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      revealItems.forEach((el) => observer.observe(el));
+    } else {
+      revealItems.forEach((el) => el.classList.add("visible"));
+    }
   }
 
   // 스크롤 리빌 애니메이션 (problems 카드)
@@ -439,21 +449,26 @@ document.addEventListener("DOMContentLoaded", () => {
       if (rafId) cancelAnimationFrame(rafId);
     };
 
-    // Observe visibility to run only when visible
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            layout();
-            start();
-          } else {
-            stop();
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    io.observe(network);
+    // Observe visibility to run only when visible (fallback: run always)
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              layout();
+              start();
+            } else {
+              stop();
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      io.observe(network);
+    } else {
+      layout();
+      start();
+    }
 
     window.addEventListener("resize", () => {
       layout();
