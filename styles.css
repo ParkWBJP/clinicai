@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -1205,6 +1206,42 @@ textarea:focus {
   .actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.18;
+  }
+
+  .subhead {
+    font-size: 16px;
+    line-height: 1.55;
+    padding: 0 6px;
+    word-break: keep-all;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+
+  .actions-bottom {
+    margin-top: 26px;
+  }
+
+  .trusted-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 12px;
+  }
+
+  .trusted-logos img {
+    height: 26px;
+    max-width: 96px;
   }
 
   .split {
@@ -2690,12 +2727,80 @@ textarea:focus {
     gap: 18px;
   }
 
+  .opt-stage {
+    width: 100%;
+    max-width: 440px;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  .opt-stage.opt-input {
+    max-width: 440px;
+  }
+
   .opt-process-line {
     display: none;
   }
 
   .opt-center {
     order: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .optimization-widget {
+    padding: 14px 12px;
+    min-height: 360px;
+  }
+
+  .opt-stage {
+    min-height: 250px;
+  }
+
+  .opt-stage-title {
+    font-size: 0.85rem;
+  }
+
+  .opt-zone {
+    min-height: 160px;
+  }
+
+  .opt-chip {
+    font-size: 0.76rem;
+    padding: 7px 10px;
+  }
+
+  .opt-center {
+    width: 160px;
+    height: 160px;
+  }
+
+  .opt-hub {
+    width: 116px;
+    height: 116px;
+  }
+
+  .opt-hub-core {
+    width: 78px;
+    height: 78px;
+  }
+
+  .opt-hub-core i {
+    width: 28px;
+    height: 28px;
+  }
+
+  .opt-label {
+    bottom: -28px;
+    min-width: 160px;
+  }
+
+  .opt-label-main {
+    font-size: 0.82rem;
+  }
+
+  .opt-label-sub {
+    font-size: 1rem;
   }
 }
 

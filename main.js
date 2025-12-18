@@ -490,6 +490,8 @@ document.addEventListener("DOMContentLoaded", () => {
       { inputId: "opt-input-zone-2", outputId: "opt-output-zone-2", progressId: "opt-progress-2" }
     ];
 
+    const isStackedLayout = () => window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
+
     const keywords = [
       { text: "Schema Org", icon: "code" },
       { text: "SEO Keywords", icon: "search" },
@@ -545,6 +547,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 40);
 
         schedule(() => {
+          if (isStackedLayout()) {
+            chip.style.transform = `translate(calc(-50% + ${randX}px), calc(-50% + ${randY}px)) scale(0.92)`;
+            chip.style.opacity = "0.55";
+            return;
+          }
+
           chip.style.transform = `translate(calc(-50% + ${randX + 280}px), calc(-50% + ${randY}px)) scale(0.55)`;
           chip.style.opacity = "0.6";
         }, 475);
