@@ -1,0 +1,319 @@
+/* Dashboard Widget Styles */
+.dashboard-widget {
+    width: 100%;
+    max-width: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+    padding: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.widget-bg-glow {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Widget Header */
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.widget-header.visible {
+    opacity: 1;
+}
+
+.widget-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.widget-logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.widget-logo-icon svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
+
+.widget-logo-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.02em;
+}
+
+.widget-live-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.widget-pulse {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+}
+
+.widget-pulse::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #10b981;
+    animation: widget-pulse-animation 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes widget-pulse-animation {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.5);
+    }
+}
+
+.widget-live-text {
+    font-size: 10px;
+    font-weight: 700;
+    color: #10b981;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Gauge Section */
+.widget-gauge-section {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.7s ease;
+}
+
+.widget-gauge-container {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.widget-gauge-bg {
+    fill: none;
+    stroke: #1e293b;
+    stroke-width: 14;
+    stroke-linecap: round;
+}
+
+.widget-gauge-progress {
+    fill: none;
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.widget-needle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    height: 80px;
+    background: linear-gradient(to top, #38bdf8, #fff);
+    transform-origin: bottom center;
+    transform: rotate(-90deg);
+    border-radius: 50% 50% 0 0;
+    z-index: 20;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+    transition: transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.widget-needle-hub {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: #0f172a;
+    border: 3px solid #38bdf8;
+    border-radius: 50%;
+    z-index: 21;
+}
+
+/* Score Display */
+.widget-score-display {
+    text-align: center;
+    flex: 1;
+}
+
+.widget-score-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.widget-score-value {
+    font-size: 48px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.widget-score-sub {
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* Info Cards */
+.widget-card-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    z-index: 10;
+    flex: 1;
+}
+
+.widget-info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    flex: 1;
+    text-align: center;
+}
+
+.widget-info-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.widget-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.widget-icon-box svg {
+    width: 20px;
+    height: 20px;
+}
+
+.widget-icon-success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.widget-icon-warning {
+    background: rgba(251, 146, 60, 0.1);
+    color: #fb923c;
+    border: 1px solid rgba(251, 146, 60, 0.2);
+}
+
+.widget-icon-info {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.widget-card-content {
+    flex: 1;
+    width: 100%;
+}
+
+.widget-card-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin: 0 0 4px 0;
+}
+
+.widget-card-text {
+    font-size: 9px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.widget-highlight-success {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.widget-highlight-warning {
+    color: #fb923c;
+    font-weight: 700;
+}
+
+.widget-highlight-info {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+/* Fade out effect */
+.widget-fade-out {
+    opacity: 0 !important;
+    transform: scale(0.95) !important;
+    transition: opacity 0.8s ease, transform 0.8s ease !important;
+}

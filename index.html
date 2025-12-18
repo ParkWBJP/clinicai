@@ -1,0 +1,923 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClinicAI | AIO/GEO Optimization for Clinics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="widget-styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="logo logo-link" href="#hero" aria-label="ClinicAI Home">
+        <img src="logo/clinic_ai_logo.png" alt="ClinicAI" class="logo-img">
+      </a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#hero">Clinic ai 란?</a></li>
+          <li><a href="#problems">WHY AIO/GEO</a></li>
+          <li><a href="#success">성공사례</a></li>
+          <li><a href="#contact">문의하기</a></li>
+        </ul>
+      </nav>
+      <a class="btn primary small cta-header" href="#contact">AIO컨설팅 문의하기</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-bg-layer" aria-hidden="true">
+          <canvas class="hero-particles"></canvas>
+          <span class="hero-blob b1" data-speed="6"></span>
+          <span class="hero-blob b2" data-speed="4"></span>
+          <span class="hero-blob b3" data-speed="5"></span>
+          <span class="hero-blob b4" data-speed="3"></span>
+        </div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow">AIO/GEO FOR HOSPITALS & CLINICS</p>
+          <h1>우리 병원은 AI검색에 노출 되고 있나요?</h1>
+          <p class="subhead">
+            <span class="hero-highlight">ClinicAI</span>는 ChatGPT, Perplexity, Google AI Overviews 같은 AI 답변에서 우리 병원이 더
+            자주, 더 높이 노출되도록 돕는 AIO/GEO 최적화 플랫폼입니다.
+          </p>
+          <div class="pill-row">
+            <span class="pill">웹사이트 AI최적화</span>
+            <span class="pill">프롬프트 전략 설계</span>
+            <span class="pill">콘텐츠 프로덕션</span>
+          </div>
+          <div class="actions actions-bottom">
+            <a class="btn primary" href="#contact">AIO컨설팅 문의하기</a>
+          </div>
+          <div class="trusted-row">
+            <div class="trusted-logos">
+              <img src="logo/chatgpt.png" alt="ChatGPT" />
+              <img src="logo/claude.png" alt="Claude" />
+              <img src="logo/google_1.png" alt="Google AI" />
+              <img src="logo/naver.png" alt="NAVER" />
+              <img src="logo/perplexity.png" alt="Perplexity" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems" class="problems-section">
+      <div class="container">
+        <div class="problems-header">
+          <p class="section-label">WHY AIO / GEO IS NECESSARY</p>
+          <h2 class="section-title">고객들은 신뢰하는 AI를 이용해서 병원을 검색하고 있습니다.</h2>
+          <p class="section-subtitle">이제 병원을 검색할때, AI가 보여주는 정보와 순서가 고객의 선택에 직접적인 영향을 미칩니다.</p>
+        </div>
+
+        <div class="problems-grid">
+          <article class="problem-card reveal-on-scroll">
+            <div class="problem-icon-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M15.5 15.5 19 19" stroke-width="2" stroke-linecap="round" />
+                <circle cx="11" cy="11" r="6" stroke-width="2" />
+              </svg>
+            </div>
+            <h3 class="problem-title">이미 일상이 된 AI 검색</h3>
+            <p class="problem-text">환자 10명 중 4명은 병원을 찾을 때 이미 생성형 AI를 사용합니다. 실제 검색의 절반 이상이 AI 안에서 일어나는 것이 현실입니다.</p>
+            <p class="problem-metric">40%</p>
+          </article>
+
+          <article class="problem-card reveal-on-scroll">
+            <div class="problem-icon-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 3 4 7v6c0 5 4 8 8 8s8-3 8-8V7l-8-4Z" stroke-width="2" stroke-linejoin="round" />
+                <path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="problem-title">AI 정보 신뢰도 상승</h3>
+            <p class="problem-text">글로벌 소비자의 70% 이상이 AI가 만든 정보를 신뢰합니다. 건강/진료 의사결정에도 AI 도움을 고려하고 있습니다.</p>
+            <p class="problem-metric">70%+</p>
+          </article>
+
+          <article class="problem-card reveal-on-scroll">
+            <div class="problem-icon-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 9v4" stroke-width="2" stroke-linecap="round" />
+                <path d="M12 17h.01" stroke-width="2" stroke-linecap="round" />
+                <path d="M12 3 3 7v10l9 4 9-4V7l-9-4Z" stroke-width="2" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="problem-title">기존 SEO의 한계</h3>
+            <p class="problem-text">키워드만 채우는 방식은 통하지 않습니다. Schema/FAQ 같은 구조화된 데이터로 AI가 읽기 쉽게 재구성이 필요합니다.</p>
+            <p class="problem-metric">Structured</p>
+          </article>
+
+          <article class="problem-card reveal-on-scroll">
+            <div class="problem-icon-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 17s3-6 9-6 9 6 9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 11v4" stroke-width="2" stroke-linecap="round" />
+                <path d="M12 7h.01" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="problem-title">노출 고착화 위험</h3>
+            <p class="problem-text">AI 학습 데이터에 초기 선점 브랜드가 반복 노출될 가능성이 높습니다. 지금 준비하지 않으면 격차가 구조적으로 벌어질 수 있습니다.</p>
+            <p class="problem-metric">선점</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="success" class="success-section">
+      <div class="container">
+        <div class="success-header">
+          <p class="section-label">SUCCESS STORIES</p>
+          <h2 class="section-title">실제 병원들이 경험한 AI 검색 최적화 성과</h2>
+          <p class="section-subtitle">AI 검색 최적화를 도입한 병원들의 성과를 하나씩 살펴보세요.</p>
+        </div>
+
+        <div class="success-slider">
+          <button class="success-nav success-prev" aria-label="Previous story">←</button>
+          <div class="success-track"></div>
+          <button class="success-nav success-next" aria-label="Next story">→</button>
+        </div>
+        <div class="success-dots" role="tablist" aria-label="Success stories pagination"></div>
+      </div>
+    </section>
+
+    <section id="aio-partner" class="partner-section section-muted">
+      <div class="container partner-wrap">
+        <div class="partner-left reveal-on-scroll">
+          <p class="section-label">WHAT WE DO</p>
+          <h2 class="partner-headline">
+            Clinic.ai는 병원의 AIO/GEO를<br />전담하는 파트너입니다.
+          </h2>
+          <p class="partner-lead">단순히 검색 순위를 올리는 것이 아니라,</p>
+          <p class="partner-highlight">
+            AI가 병원을 어떻게 설명하고,<br />어떤 맥락으로 추천하는지까지 관리합니다.
+          </p>
+          <p class="partner-desc">
+            ChatGPT, Perplexity, Google AI Overviews와 같은 생성형 검색 환경에서 병원이 정확하게, 일관되게, 눈에 띄게 소개되도록 설계합니다.
+          </p>
+          <div class="partner-pills">
+            <span class="pill">정보 구조 설계</span>
+            <span class="pill">콘텐츠/FAQ 재구성</span>
+            <span class="pill">AI 노출 모니터링</span>
+          </div>
+        </div>
+
+        <div class="partner-right reveal-on-scroll">
+          <div class="ai-network" aria-label="AI network visualization">
+            <svg class="ai-lines" viewBox="0 0 400 400" aria-hidden="true">
+              <line x1="200" y1="200" x2="320" y2="110" />
+              <line x1="200" y1="200" x2="310" y2="260" />
+              <line x1="200" y1="200" x2="90" y2="120" />
+              <line x1="200" y1="200" x2="85" y2="270" />
+              <line x1="200" y1="200" x2="200" y2="70" />
+            </svg>
+            <div class="ai-center">
+              <img src="logo/clinic_ai_logo.png" alt="Clinic.ai" />
+            </div>
+            <button class="ai-node ai-node--chatgpt" type="button" aria-label="ChatGPT">
+              <img src="logo/chatgpt.png" alt="ChatGPT" />
+            </button>
+            <button class="ai-node ai-node--google" type="button" aria-label="Google">
+              <img src="logo/google_1.png" alt="Google" />
+            </button>
+            <button class="ai-node ai-node--naver" type="button" aria-label="Naver">
+              <img src="logo/naver.png" alt="Naver" />
+            </button>
+            <button class="ai-node ai-node--perplexity" type="button" aria-label="Perplexity">
+              <img src="logo/perplexity.png" alt="Perplexity" />
+            </button>
+            <button class="ai-node ai-node--claude" type="button" aria-label="Claude">
+              <img src="logo/claude.png" alt="Claude" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-structure" class="service-structure-section">
+      <div class="container">
+        <div class="section-header text-center mb-12">
+          <h2 class="section-title">병원의 AIO/GEO를 전략부터<br /> 실행, 인사이트까지 전담합니다.</h2>
+          <p class="section-subtitle">
+            Clinic.ai는 병원이 AI 답변에서 어떤 맥락으로 이해되고 추천되는지부터 진단합니다. 진단 결과를 바탕으로 AI가 읽기 쉬운 구조로 구현·운영하고, 언급·노출·유입 신호를 추적해 다음
+            액션까지 제시합니다.
+          </p>
+        </div>
+
+        <div class="service-structure-list">
+          <article class="service-structure-item reveal-on-scroll layout-text-left">
+            <div class="service-structure-text">
+              <p class="section-label">STEP 01</p>
+              <h3 class="service-structure-title">전략/설계</h3>
+              <p class="service-structure-lead">AI 검색(질문) 환경에서 우리 병원이 어떤 기준으로 이해되고, 어떤 상황에서 추천되는지부터 진단합니다.</p>
+              <p class="service-structure-body">Clinic.ai는 질문 프롬프트들 속에서 우리 병원이 어떤 맥락으로 등장하는지를 진단하고, 고객의 선택 과정에서 자연스럽게
+                추천되도록 설계합니다.
+              </p>
+            </div>
+            <div class="service-structure-visual">
+              <div class="dashboard-widget">
+                <div class="widget-bg-glow"></div>
+
+                <!-- Header -->
+                <div class="widget-header" id="widget-header-1">
+                  <div class="widget-logo">
+                    <div class="widget-logo-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                          d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <span class="widget-logo-text">Clinic.ai</span>
+                  </div>
+                  <div class="widget-live-badge">
+                    <span class="widget-pulse"></span>
+                    <span class="widget-live-text">Live</span>
+                  </div>
+                </div>
+
+                <!-- Gauge Section -->
+                <div class="widget-gauge-section" id="widget-gauge-1">
+                  <div class="widget-gauge-container">
+                    <svg width="200" height="100" viewBox="0 0 200 100">
+                      <defs>
+                        <linearGradient id="gaugeGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" style="stop-color:#3b82f6" />
+                          <stop offset="50%" style="stop-color:#06b6d4" />
+                          <stop offset="100%" style="stop-color:#10b981" />
+                        </linearGradient>
+                      </defs>
+                      <path class="widget-gauge-bg" d="M20 100 A 80 80 0 0 1 180 100" />
+                      <path id="widget-progress-1" class="widget-gauge-progress" d="M20 100 A 80 80 0 0 1 180 100"
+                        style="stroke: url(#gaugeGradient1)" />
+                    </svg>
+                    <div id="widget-needle-1" class="widget-needle"></div>
+                    <div class="widget-needle-hub"></div>
+                  </div>
+
+                  <div class="widget-score-display">
+                    <div class="widget-score-label">CLINIC.AI SCORE</div>
+                    <div id="widget-score-1" class="widget-score-value">0</div>
+                    <div class="widget-score-sub">Top 15% in Gangnam Area</div>
+                  </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="widget-card-list">
+                  <div class="widget-info-card" id="widget-card-1-1">
+                    <div class="widget-icon-box widget-icon-success">
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <div class="widget-card-content">
+                      <h3 class="widget-card-title">긍정 신호 포착</h3>
+                      <p class="widget-card-text">'안전성' 매칭률 <span class="widget-highlight-success">12% 상승</span></p>
+                    </div>
+                  </div>
+
+                  <div class="widget-info-card" id="widget-card-1-2">
+                    <div class="widget-icon-box widget-icon-warning">
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                      </svg>
+                    </div>
+                    <div class="widget-card-content">
+                      <h3 class="widget-card-title">트래픽 급증</h3>
+                      <p class="widget-card-text">AI 추천 유입 <span class="widget-highlight-warning">급상승 중</span></p>
+                    </div>
+                  </div>
+
+                  <div class="widget-info-card" id="widget-card-1-3">
+                    <div class="widget-icon-box widget-icon-info">
+                      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <div class="widget-card-content">
+                      <h3 class="widget-card-title">최적화 제안</h3>
+                      <p class="widget-card-text">응답률 개선 시 <span class="widget-highlight-info">80점+</span> 예상</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-structure-item reveal-on-scroll layout-text-right">
+            <div class="service-structure-text">
+              <p class="section-label">STEP 02</p>
+              <h3 class="service-structure-title">구현/운영</h3>
+              <p class="service-structure-lead">AI 진단 결과를 바탕으로, AI가 병원 정보를 정확히 읽고 인용할 수 있는 형태로 실제 구현·운영합니다.</p>
+              <p class="service-structure-body">핵심 시술/서비스를 필러페이지·콘텐츠로 구조화하고, AIO/SEO 대응을 위한 프롬프트·키워드·스키마를 설계·적용합니다. 고객
+                질문 흐름에 맞춰 <strong>콘텐츠를 기획/제작(일본어 포함)</strong>하며, AI 답변에 유리한 상태로 지속 운영합니다.</p>
+            </div>
+            <div class="service-structure-visual">
+              <div class="optimization-widget">
+                <!-- Background Pattern -->
+                <div class="opt-bg-pattern"></div>
+
+                <!-- Pipeline Visualization -->
+                <div class="opt-pipeline">
+                  <!-- Connection Line -->
+                  <div class="opt-process-line"></div>
+                  <div class="opt-process-active" id="opt-progress-2"></div>
+
+                  <!-- INPUT (Left) -->
+                  <div class="opt-stage opt-input">
+                    <div class="opt-stage-header">
+                      <div class="opt-stage-icon">
+                        <i data-lucide="file-text"></i>
+                      </div>
+                      <h4 class="opt-stage-title">Raw Inputs</h4>
+                    </div>
+                    <div id="opt-input-zone-2" class="opt-zone"></div>
+                  </div>
+
+                  <!-- AI ENGINE (Center) -->
+                  <div class="opt-center">
+                    <div class="opt-hub">
+                      <div class="opt-hub-ring"></div>
+                      <div class="opt-hub-core">
+                        <i data-lucide="cpu"></i>
+                      </div>
+                    </div>
+                    <div class="opt-scan-ripple"></div>
+                    <div class="opt-label">
+                      <span class="opt-label-main">Clinic.ai team</span>
+                      <span class="opt-label-sub">
+                        <span class="opt-label-human">Human</span> + AI
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- OUTPUT (Right) -->
+                  <div class="opt-stage opt-output">
+                    <div class="opt-stage-header">
+                      <div class="opt-stage-icon opt-icon-blue">
+                        <i data-lucide="layout-grid"></i>
+                      </div>
+                      <h4 class="opt-stage-title">Optimized Data</h4>
+                    </div>
+                    <div id="opt-output-zone-2" class="opt-output-list"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-structure-item reveal-on-scroll layout-text-left">
+            <div class="service-structure-text">
+              <p class="section-label">STEP 03</p>
+              <h3 class="service-structure-title">모니터링/인사이트</h3>
+              <p class="service-structure-lead">AI 검색(질문) 환경에서 우리 병원이 어떤 질문에, 어떤 형태로 언급·노출되는지를 지속 추적합니다.</p>
+              <p class="service-structure-body">
+                Clinic.ai는<br />
+                GPT·Perplexity·Google AI 등에서의 병원 언급/노출 현황을 모니터링하고,<br />
+                경쟁 병원의 AIO 수준을 <strong>비교·분석(벤치마크)</strong>합니다.<br />
+                또한 핵심 지표와 개선사항을 주 1회 이상 리포트로 제공하며,<br />
+                AIO 점수·콘텐츠·노출 추이를 대시보드에서 한눈에 확인할 수 있게 운영합니다.
+              </p>
+            </div>
+            <div class="service-structure-visual">
+              <div class="monitor-dashboard">
+                <div class="monitor-top">
+                  <div class="monitor-logo">
+                    <div class="monitor-logo-mark">
+                      <i data-lucide="activity"></i>
+                    </div>
+                    <span>Clinic.ai</span>
+                  </div>
+                  <div class="monitor-clock-chip">
+                    <span class="monitor-live-dot"></span>
+                    <span id="monitor-clock">--:--</span>
+                  </div>
+                </div>
+
+                <div class="monitor-top-grid">
+                  <div class="monitor-kpi">
+                    <p class="monitor-kpi-label">TOTAL VIEWS</p>
+                    <div class="monitor-kpi-value">12,845</div>
+                    <div class="monitor-kpi-sub">
+                      <i data-lucide="eye"></i>
+                      <span>+8.2%</span>
+                    </div>
+                  </div>
+                  <div class="monitor-kpi">
+                    <p class="monitor-kpi-label">PROMPT VOLUME</p>
+                    <div class="monitor-kpi-value">72.4<span class="monitor-kpi-unit">%</span></div>
+                    <div class="monitor-kpi-sub positive">
+                      <i data-lucide="trending-up"></i>
+                      <span>+12.5%</span>
+                    </div>
+                  </div>
+                  <div class="monitor-benchmark-card">
+                    <div class="monitor-benchmark-head">
+                      <span>BENCHMARK (경쟁사비교)</span>
+                      <span class="monitor-chip">Top 1%</span>
+                    </div>
+                    <div class="monitor-benchmark-row">
+                      <span class="main">Clinic.ai</span>
+                      <div class="monitor-bar">
+                        <div class="monitor-bar-fill" data-width="88%"></div>
+                      </div>
+                      <span class="score">88</span>
+                    </div>
+                    <div class="monitor-benchmark-row">
+                      <span>Comp A</span>
+                      <div class="monitor-bar pale">
+                        <div class="monitor-bar-fill pale" data-width="62%"></div>
+                      </div>
+                      <span class="score muted">62</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="monitor-bottom-grid">
+                  <div class="monitor-trend-panel">
+                    <div class="monitor-panel-head">
+                      <span>Trend</span>
+                      <span class="monitor-dot green"></span>
+                      <span class="monitor-legend">Share %</span>
+                    </div>
+                    <div class="monitor-chart-box">
+                      <svg viewBox="0 0 320 170" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="monitorGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#22c55e" stop-opacity="0.25" />
+                            <stop offset="100%" stop-color="#22c55e" stop-opacity="0" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M0 170 L0 140 C40 130 80 138 120 110 C160 82 200 120 240 90 L280 70 L320 40 L320 170 Z"
+                          fill="url(#monitorGrad)"></path>
+                        <path d="M0 140 C40 130 80 138 120 110 C160 82 200 120 240 90 L280 70 L320 40" fill="none"
+                          stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <circle cx="320" cy="40" r="5" fill="#fff" stroke="#22c55e" stroke-width="3"></circle>
+                      </svg>
+                      <div class="monitor-chart-labels">
+                        <span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="monitor-visibility-card">
+                    <div class="monitor-panel-head">
+                      <span>AI VISIBILITY</span>
+                      <span class="monitor-dot green"></span>
+                    </div>
+                    <div class="monitor-vis-list">
+                      <div class="monitor-vis-item">
+                        <div class="monitor-avatar chatgpt"></div>
+                        <div class="monitor-vis-text">
+                          <div class="monitor-vis-row">
+                            <span>ChatGPT</span>
+                          </div>
+                          <p>최근 30일간의 답변 점유율은 약 54%입니다.</p>
+                        </div>
+                      </div>
+                      <div class="monitor-vis-item">
+                        <div class="monitor-avatar google"></div>
+                        <div class="monitor-vis-text">
+                          <div class="monitor-vis-row">
+                            <span>Google AI Overview</span>
+                          </div>
+                          <p>최근 30일간의 답변 점유율은 약 75%입니다.</p>
+                        </div>
+                      </div>
+                      <div class="monitor-vis-item">
+                        <div class="monitor-avatar perplexity"></div>
+                        <div class="monitor-vis-text">
+                          <div class="monitor-vis-row">
+                            <span>Perplexity</span>
+                          </div>
+                          <p>최근 30일간의 답변 점유율은 약 32%입니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="core-features" class="section section-dark">
+      <div class="container">
+        <div class="section-head text-center" style="margin-bottom: 48px;">
+          <p class="eyebrow">Clinic.ai 핵심기능</p>
+          <h2 class="section-title" style="color: #fff;">병원 AIO 최적화를 위한<br class="mo-only" /> <span
+              style="color: #7fcfc5;">Clinic.ai</span> 핵심 기능 14가지</h2>
+        </div>
+
+        <div class="core-feature-grid">
+          <!-- 1 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="search"></i>
+            </div>
+            <div class="core-content">
+              <h3>사이트 진단</h3>
+              <p>병원 현재상태의 AIO 현재 상태를 종합 점검</p>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="code"></i>
+            </div>
+            <div class="core-content">
+              <h3>스키마 마크업</h3>
+              <p>AI 파싱을 위한 기술적 구현</p>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="scan-search"></i>
+            </div>
+            <div class="core-content">
+              <h3>AI검색 노출/모니터링</h3>
+              <p>GPT, Google AI 등에서 병원 언급/노출 현황을 추적, 관리</p>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="bar-chart-4"></i>
+            </div>
+            <div class="core-content">
+              <h3>AIO스코어링</h3>
+              <p>AI관점에서 사이트 경쟁력을 수치화</p>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="file-plus"></i>
+            </div>
+            <div class="core-content">
+              <h3>필러페이지 기획/제작</h3>
+              <p>핵심 시술/서비스를 깊이있게 설명하는 메인정보 허브페이지 구현</p>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="users"></i>
+            </div>
+            <div class="core-content">
+              <h3>경쟁사 AI 벤치마크</h3>
+              <p>경쟁 병원들의 AIO 수준을 비교/분석</p>
+            </div>
+          </div>
+          <!-- 7 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="network"></i>
+            </div>
+            <div class="core-content">
+              <h3>사이트 구조설계</h3>
+              <p>AI가 이해하기 쉬운 구조로 메뉴/페이지 배치 제안</p>
+            </div>
+          </div>
+          <!-- 8 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="key"></i>
+            </div>
+            <div class="core-content">
+              <h3>키워드 기획/생성</h3>
+              <p>병원 핵심키워드를 선정하고 관리/모니터링</p>
+            </div>
+          </div>
+          <!-- 9 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="clipboard-list"></i>
+            </div>
+            <div class="core-content">
+              <h3>주1회이상 리포트</h3>
+              <p>주요지표와 개선사항을 요약한 리포트 제공</p>
+            </div>
+          </div>
+          <!-- 10 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <div class="core-content">
+              <h3>규제/법령 컴플라이언스</h3>
+              <p>의료광고/법령을 준수하는 표현/구성 설계</p>
+            </div>
+          </div>
+          <!-- 11 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="pen-tool"></i>
+            </div>
+            <div class="core-content">
+              <h3>콘텐츠 기획/제작</h3>
+              <p>진료/시술/서비스 별 AIO 최적화된 블로그, 칼럼 등의 콘텐츠 기획/제작</p>
+            </div>
+          </div>
+          <!-- 12 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="layout-dashboard"></i>
+            </div>
+            <div class="core-content">
+              <h3>대시보드</h3>
+              <p>AIO 점수/콘텐츠/노출 추이를 한눈에 확인할 수 있는 웹서비스 제공</p>
+            </div>
+          </div>
+          <!-- 13 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="languages"></i>
+            </div>
+            <div class="core-content">
+              <h3>다국어 대응(영어/일본어)</h3>
+              <p>해외환자 유치를 위한 다국어 페이지 운영</p>
+            </div>
+          </div>
+          <!-- 14 -->
+          <div class="core-card reveal-on-scroll">
+            <div class="core-icon-box">
+              <i data-lucide="message-circle-question"></i>
+            </div>
+            <div class="core-content">
+              <h3>질문 설계 모니터링</h3>
+              <p>환자가 실제 AI에 물을법한 질문세트 설계/관리</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <section id="faq" class="section faq-section">
+      <div class="container">
+        <div class="faq-header">
+          <p class="eyebrow">FAQ</p>
+          <h2 class="section-title">Clinic.ai AIO/GEO 자주 묻는 질문</h2>
+          <p class="section-desc">질문을 클릭하면 답변이 펼쳐집니다.</p>
+        </div>
+        <div class="faq-grid">
+          <details class="faq-item-card">
+            <summary><span>AIO/GEO란 무엇인가요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>AIO(또는 GEO)는 ChatGPT, Perplexity, Google AI Overviews 같은 AI 검색/AI 답변 환경에서 병원이 어떤 방식으로 이해되고 추천되는지를 최적화하는 접근입니다. 단순히 키워드 순위를 올리는 것이 아니라, 병원 정보가 AI가 읽기 쉬운 구조로 정리되고 일관되게 설명되도록 만드는 것이 핵심입니다.</p>
+            </div>
+          </details>
+
+          <details class="faq-item-card">
+            <summary><span>Clinic.ai의 AIO/GEO는 기존 병원 SEO와 무엇이 다른가요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>기존 SEO가 주로 검색 결과(링크 목록)에서의 노출을 목표로 한다면, Clinic.ai의 AIO/GEO는 AI 답변에서 우리 병원이 ‘채택’될 수 있도록 병원이 설명되는 방식과 추천 맥락까지 함께 관리합니다. 즉 “페이지가 보이느냐”를 넘어, AI가 병원을 어떤 맥락으로 설명하는지(신뢰·전문성·근거·일관성)를 설계하는 방식입니다.</p>
+            </div>
+          </details>
+
+          <details class="faq-item-card">
+            <summary><span>AI 검색에서 우리 병원이 추천/언급되게 하려면 무엇부터 해야 하나요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>가장 먼저 해야 할 일은 현 상태 진단입니다. AI가 병원을 이해하는 데 필요한 정보(진료 범위, 강점, 근거, 위치/진료시간, 의료진 정보 등)가 어디에 어떤 구조로 존재하는지 확인하고, 우선순위(개선 순서)를 정합니다.</p>
+            </div>
+          </details>
+
+          <details class="faq-item-card">
+            <summary><span>AIO/GEO 초기 진단에서는 어떤 항목을 점검하나요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>초기 진단에서는 병원 사이트와 온라인 정보가 AI가 읽고 인용하기 좋은 상태인지 중심으로 점검합니다. 핵심 페이지 구성, 정보의 일관성, 주요 진료/시술 설명의 명확성, AI 검색 환경에서의 노출 방식 등을 종합적으로 확인합니다. Clinic.ai에서는 도메인만 입력하면 무료 진단을 통해 현재 상태를 분석하실 수 있습니다.</p>
+            </div>
+          </details>
+
+          <details class="faq-item-card">
+            <summary><span>Clinic.ai 서비스 비용과 도입절차는 어떻게 되나요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>도입은 보통 초기 진단 → 구현/운영 범위 확정 → 계약 → 대시보드 ID 발행 → 운영 → 정기 리포트 순서로 진행됩니다. 비용은 운영 범위에 따라 달라지며, 초기 진단 결과를 바탕으로 협의를 통해 안내드립니다.</p>
+            </div>
+          </details>
+
+          <details class="faq-item-card">
+            <summary><span>우리 병원 홈페이지를 리뉴얼하지 않아도 AIO/GEO를 적용할 수 있나요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>네, 전면 리뉴얼 없이도 적용 가능한 경우가 많습니다. 대부분은 기존 사이트를 유지한 채로 핵심 정보 구조 정리와 중요 페이지 개선부터 단계적으로 진행합니다. “전체를 갈아엎는 방식”이 아니라, 효과가 큰 부분부터 순차 개선하는 접근을 기본으로 합니다.</p>
+            </div>
+          </details>
+
+          <details class="faq-item-card">
+            <summary><span>SEO와 별개로 운영해야 하나요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>아닙니다. Clinic.ai는 검색 유입을 위한 SEO 흐름을 유지하면서, AI 답변에서 병원이 정확하고 일관되게 채택될 수 있도록 정보 구조와 콘텐츠를 함께 정리합니다.</p>
+            </div>
+          </details>
+
+          <details class="faq-item-card">
+            <summary><span>Clinic.ai 서비스는 AI로만 제공되나요?</span><span class="faq-icon" aria-hidden="true">+</span></summary>
+            <div class="faq-answer">
+              <p>아닙니다. Clinic.ai는 전문 담당자가 배정되어 진단부터 운영까지 책임지고 진행합니다. AI가 범할 수 있는 오류를 모니터링하고, 병원의 주요 내용과 최신 트렌드를 반영하기 위해 지속적인 커뮤니케이션을 기반으로 관리합니다.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-card reveal">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>AI 검색에서 우리 병원이 어떻게 보여지는지<br /> 먼저 진단해보세요.</h2>
+          <p class="section-desc">간단한 정보를 남겨주시면 무료 AIO/GEO 초기 진단 결과를 보내드립니다.</p>
+          <img src="logo/clinic_ai_logo.png" alt="Clinic.ai" class="contact-logo-mark">
+        </div>
+        <form class="contact-form">
+          <div class="form-row-inline two">
+            <div class="form-field">
+              <label for="clinic">병원/클리닉명 <span class="req">*</span></label>
+              <input id="clinic" name="clinic" type="text" placeholder="예) 클리닉AI 병원" required>
+            </div>
+            <div class="form-field">
+              <label for="website">웹사이트 주소 <span class="req">*</span></label>
+              <input id="website" name="website" type="url" placeholder="예) https://clinicai.com" required>
+            </div>
+          </div>
+
+          <div class="form-row-inline three">
+            <div class="form-field">
+              <label for="contact-person">담당자 이름 <span class="req">*</span></label>
+              <input id="contact-person" name="contact-person" type="text" placeholder="성함을 입력해 주세요" required>
+            </div>
+            <div class="form-field">
+              <label for="email">이메일 <span class="req">*</span></label>
+              <input id="email" name="email" type="email" placeholder="email@clinic.com" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">연락처</label>
+              <input id="phone" name="phone" type="text" placeholder="예) 010-1234-5678">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="notes">문의사항</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="현재 진료과/키워드, 목표 등을 적어 주세요."></textarea>
+          </div>
+          <button type="submit" class="btn primary full">Request Free AI Audit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">ClinicAI</div>
+        <p>AI 기반 병원·클리닉 AIO/GEO 컨설팅 솔루션</p>
+      </div>
+      <div>
+        <p class="footer-label">회사 정보</p>
+        <p>서울 어딘가 123, 5F</p>
+        <p><a href="mailto:hello@clinicai.com">hello@clinicai.com</a></p>
+      </div>
+      <div>
+        <p class="footer-label">링크</p>
+        <a href="#success">성공사례</a><br>
+        <a href="#contact">무료 AI 감사 요청</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© ClinicAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Dashboard Widget Animation with Infinite Loop
+    function initWidgetAnimation(widgetId, targetScore = 72) {
+      const progressPath = document.getElementById(`widget-progress-${widgetId}`);
+      const needle = document.getElementById(`widget-needle-${widgetId}`);
+      const scoreText = document.getElementById(`widget-score-${widgetId}`);
+      const header = document.getElementById(`widget-header-${widgetId}`);
+      const gaugeContainer = document.getElementById(`widget-gauge-${widgetId}`);
+
+      const cards = [
+        document.getElementById(`widget-card-${widgetId}-1`),
+        document.getElementById(`widget-card-${widgetId}-2`),
+        document.getElementById(`widget-card-${widgetId}-3`)
+      ];
+
+      if (!progressPath || !needle || !scoreText) return;
+
+      const maxScore = 100;
+      const pathLength = 251; // Updated for smaller gauge (80 radius)
+      let animationStarted = false;
+
+      // Intersection Observer for scroll trigger
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animationStarted) {
+            animationStarted = true;
+            startInfiniteAnimation();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      if (gaugeContainer) {
+        observer.observe(gaugeContainer);
+      }
+
+      async function animateWidget() {
+        // Reset all elements
+        progressPath.style.transition = 'none';
+        progressPath.style.strokeDashoffset = pathLength;
+
+        needle.style.transition = 'none';
+        needle.style.transform = 'rotate(-90deg)';
+
+        scoreText.textContent = '0';
+
+        if (header) {
+          header.style.opacity = '0';
+        }
+
+        cards.forEach(card => {
+          if (card) {
+            card.classList.remove('visible');
+          }
+        });
+
+        await new Promise(r => setTimeout(r, 100));
+
+        // Show header
+        if (header) {
+          header.style.transition = 'opacity 0.5s ease';
+          header.style.opacity = '1';
+        }
+
+        await new Promise(r => setTimeout(r, 300));
+
+        // Animate gauge & needle
+        progressPath.style.transition = 'stroke-dashoffset 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        const offset = pathLength - (pathLength * (targetScore / maxScore));
+        progressPath.style.strokeDashoffset = offset;
+
+        needle.style.transition = 'transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        const rotation = (targetScore / maxScore * 180) - 90;
+        needle.style.transform = `rotate(${rotation}deg)`;
+
+        // Count up score
+        let startTimestamp = null;
+        const duration = 1500;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 4);
+          scoreText.textContent = Math.floor(targetScore * ease);
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+
+        // Show cards sequentially
+        await new Promise(r => setTimeout(r, 600));
+
+        for (let i = 0; i < cards.length; i++) {
+          if (cards[i]) {
+            cards[i].classList.add('visible');
+            await new Promise(r => setTimeout(r, 300));
+          }
+        }
+
+        // Hold for 3 seconds before restarting
+        await new Promise(r => setTimeout(r, 3000));
+      }
+
+      async function startInfiniteAnimation() {
+        while (true) {
+          await animateWidget();
+        }
+      }
+    }
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      initWidgetAnimation(1, 72);
+    });
+  </script>
+  <script src="main.js"></script>
+</body>
+
+</html>
