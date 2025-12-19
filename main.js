@@ -6,6 +6,14 @@ window.addEventListener("error", __disableJsClass);
 window.addEventListener("unhandledrejection", __disableJsClass);
 
 document.addEventListener("DOMContentLoaded", () => {
+  const getLang = () => {
+    const raw = String(window.__LANG || document.documentElement.lang || "ko").toLowerCase();
+    if (raw.startsWith("en")) return "en";
+    if (raw.startsWith("ja")) return "ja";
+    return "ko";
+  };
+  const lang = getLang();
+
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
   }
@@ -277,40 +285,114 @@ document.addEventListener("DOMContentLoaded", () => {
   const successPrev = document.querySelector(".success-prev");
   const successNext = document.querySelector(".success-next");
 
-  const successSlides = [
-    {
-      headlineHtml: "AI 최적화 이후<br>15,000건 이상의 오가닉 트래픽 상승<br>고객 문의 40건 이상 증가",
-      bodyText:
-        "Northwest Eye Clinic은 생성형 엔진 최적화(GEO) 콘텐츠 엔진을 도입해, 월 15,000건 이상의 자연(오가닉) 방문 트래픽과 40건이 넘는 신규 환자 문의를 안정적으로 만들어 내고 있습니다.",
-      clinicName: "Northwest Eye Clinic",
-      metaText: "Minnesota · 제공: Tely AI",
-      caseUrl:
-        "https://www.tely.ai/case-study-new/northwest-eye-clinic-growing-from-near-zero-to-15k-monthly-views-with-seo-geo-optimized-stabilization"
+  const successContent = {
+    ko: {
+      label: (idx) => `성공사례 0${idx + 1}`,
+      dotAria: (idx) => `성공사례 ${idx + 1}`,
+      caseLink: "사례 보기 →",
+      slides: [
+        {
+          headlineHtml: "AI 최적화 이후<br>15,000건 이상의 오가닉 트래픽 상승<br>고객 문의 40건 이상 증가",
+          bodyText:
+            "Northwest Eye Clinic은 생성형 엔진 최적화(GEO) 콘텐츠 엔진을 도입해, 월 15,000건 이상의 자연(오가닉) 방문 트래픽과 40건이 넘는 신규 환자 문의를 안정적으로 만들어 내고 있습니다.",
+          clinicName: "Northwest Eye Clinic",
+          metaText: "Minnesota · 제공: Tely AI",
+          caseUrl:
+            "https://www.tely.ai/case-study-new/northwest-eye-clinic-growing-from-near-zero-to-15k-monthly-views-with-seo-geo-optimized-stabilization"
+        },
+        {
+          headlineHtml: "AI 최적화 이후<br>ChatGPT 답변 상위 노출 달성<br>병원 FAQ 기반 환자 신뢰도 급상승",
+          bodyText:
+            "Midwest Regional Medical Center는 FAQ 콘텐츠를 생성형 엔진 최적화(GEO) 구조로 재설계한 이후, ChatGPT 및 주요 AI 답변에서 병원 정보가 상위로 인용되기 시작했으며, 환자들이 신뢰하는 1차 정보 출처로 자리 잡았습니다.",
+          clinicName: "Midwest Regional Medical Center",
+          metaText: "400-bed Hospital · 제공: Relixir",
+          caseUrl: "https://relixir.ai/blog/relixir-chatgpt-rankings-hospital-faq-27-days-geo-case-study"
+        },
+        {
+          headlineHtml: "AIO/GEO도입 이후 3개월전 대비<br>오가닉 트래픽 1만 건 달성<br>전화 문의 819건 · 예약 61건 증가",
+          bodyText:
+            "Glen Burnie Medical Clinic은 AIO/GEO 구조를 도입한 이후 단 28일 만에 1만 건 이상의 방문과 819건의 전화 문의, 61건의 직접 예약을 만들어 내며 지역 내 병원 검색에서 압도적인 성과를 달성했습니다.",
+          clinicName: "Glen Burnie Medical Clinic",
+          metaText: "Maryland · 제공: Frasatali",
+          caseUrl: "https://frasatali.com/medical-clinic-seo-case-study-glen-burnie/"
+        }
+      ]
     },
-    {
-      headlineHtml: "AI 최적화 이후<br>ChatGPT 답변 상위 노출 달성<br>병원 FAQ 기반 환자 신뢰도 급상승",
-      bodyText:
-        "Midwest Regional Medical Center는 FAQ 콘텐츠를 생성형 엔진 최적화(GEO) 구조로 재설계한 이후, ChatGPT 및 주요 AI 답변에서 병원 정보가 상위로 인용되기 시작했으며, 환자들이 신뢰하는 1차 정보 출처로 자리 잡았습니다.",
-      clinicName: "Midwest Regional Medical Center",
-      metaText: "400-bed Hospital · 제공: Relixir",
-      caseUrl: "https://relixir.ai/blog/relixir-chatgpt-rankings-hospital-faq-27-days-geo-case-study"
+    en: {
+      label: (idx) => `SUCCESS STORY 0${idx + 1}`,
+      dotAria: (idx) => `Success story ${idx + 1}`,
+      caseLink: "Case Study →",
+      slides: [
+        {
+          headlineHtml: "After AI optimization<br>+15,000 organic visits/month<br>40+ new inquiries",
+          bodyText:
+            "Northwest Eye Clinic implemented a GEO content engine, achieving 15,000+ monthly organic visits and a steady 40+ new patient inquiries.",
+          clinicName: "Northwest Eye Clinic",
+          metaText: "Minnesota · Powered by Tely AI",
+          caseUrl:
+            "https://www.tely.ai/case-study-new/northwest-eye-clinic-growing-from-near-zero-to-15k-monthly-views-with-seo-geo-optimized-stabilization"
+        },
+        {
+          headlineHtml: "After AI optimization<br>Top placements in ChatGPT answers<br>Trust boosted via FAQs",
+          bodyText:
+            "Midwest Regional Medical Center rebuilt their FAQ content into a GEO-friendly structure. Their information began appearing higher in ChatGPT and other AI answers, becoming a trusted first source for patients.",
+          clinicName: "Midwest Regional Medical Center",
+          metaText: "400-bed Hospital · Powered by Relixir",
+          caseUrl: "https://relixir.ai/blog/relixir-chatgpt-rankings-hospital-faq-27-days-geo-case-study"
+        },
+        {
+          headlineHtml: "3 months after AIO/GEO adoption<br>10,000 organic visits achieved<br>819 calls · 61 bookings",
+          bodyText:
+            "After adopting an AIO/GEO structure, Glen Burnie Medical Clinic generated 10,000+ visits in just 28 days, with 819 phone inquiries and 61 direct bookings—an outsized result in local search.",
+          clinicName: "Glen Burnie Medical Clinic",
+          metaText: "Maryland · Powered by Frasatali",
+          caseUrl: "https://frasatali.com/medical-clinic-seo-case-study-glen-burnie/"
+        }
+      ]
     },
-    {
-      headlineHtml: "AIO/GEO도입 이후 3개월전 대비<br>오가닉 트래픽 1만 건 달성<br>전화 문의 819건 · 예약 61건 증가",
-      bodyText:
-        "Glen Burnie Medical Clinic은  AIO/GEO 구조를 도입한 이후 단 28일 만에 1만 건 이상의 방문과 819건의 전화 문의, 61건의 직접 예약을 만들어 내며 지역 내 병원 검색에서 압도적인 성과를 달성했습니다.",
-      clinicName: "Glen Burnie Medical Clinic",
-      metaText: "Maryland · 제공: Frasatali",
-      caseUrl: "https://frasatali.com/medical-clinic-seo-case-study-glen-burnie/"
+    ja: {
+      label: (idx) => `導入事例 0${idx + 1}`,
+      dotAria: (idx) => `導入事例 ${idx + 1}`,
+      caseLink: "事例を見る →",
+      slides: [
+        {
+          headlineHtml: "AI最適化後<br>月間オーガニック流入 +15,000<br>新規問い合わせ 40件以上増",
+          bodyText:
+            "Northwest Eye ClinicはGEO向けコンテンツエンジンを導入し、月間15,000件以上のオーガニック流入と40件超の新規問い合わせを安定的に創出しています。",
+          clinicName: "Northwest Eye Clinic",
+          metaText: "ミネソタ州 · 提供：Tely AI",
+          caseUrl:
+            "https://www.tely.ai/case-study-new/northwest-eye-clinic-growing-from-near-zero-to-15k-monthly-views-with-seo-geo-optimized-stabilization"
+        },
+        {
+          headlineHtml: "AI最適化後<br>ChatGPT回答で上位表示<br>FAQ改善で信頼度向上",
+          bodyText:
+            "Midwest Regional Medical CenterはFAQコンテンツをGEOに適した構造へ再設計。ChatGPTなど主要AI回答での引用順位が上がり、患者が信頼する一次情報源として定着しました。",
+          clinicName: "Midwest Regional Medical Center",
+          metaText: "400床規模病院 · 提供：Relixir",
+          caseUrl: "https://relixir.ai/blog/relixir-chatgpt-rankings-hospital-faq-27-days-geo-case-study"
+        },
+        {
+          headlineHtml: "AIO/GEO導入後（3ヶ月）<br>オーガニック流入 1万件達成<br>電話819件・予約61件増",
+          bodyText:
+            "Glen Burnie Medical ClinicはAIO/GEO構造を導入後、わずか28日で10,000件以上の流入、電話問い合わせ819件、直接予約61件を創出し、地域検索で大きな成果を実現しました。",
+          clinicName: "Glen Burnie Medical Clinic",
+          metaText: "メリーランド州 · 提供：Frasatali",
+          caseUrl: "https://frasatali.com/medical-clinic-seo-case-study-glen-burnie/"
+        }
+      ]
     }
-  ];
+  };
+
+  const successPack = successContent[lang] || successContent.ko;
+  const successSlides = successPack.slides;
 
   if (successTrack && successSlides.length) {
     successTrack.innerHTML = successSlides
       .map(
         (slide, idx) => `
         <article class="success-card reveal-on-scroll">
-          <p class="success-label">SUCCESS STORY 0${idx + 1}</p>
+          <p class="success-label">${successPack.label(idx)}</p>
           <h3 class="case-headline">${slide.headlineHtml}</h3>
           <p class="case-body">${slide.bodyText}</p>
           <div class="success-footer">
@@ -318,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="footer-hospital">${slide.clinicName}</p>
               <p class="footer-meta">${slide.metaText}</p>
             </div>
-            <a class="footer-link case-link" href="${slide.caseUrl}" target="_blank" rel="noopener noreferrer">Case Study →</a>
+            <a class="footer-link case-link" href="${slide.caseUrl}" target="_blank" rel="noopener noreferrer">${successPack.caseLink}</a>
           </div>
         </article>`
       )
@@ -328,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (successDots) {
       successDots.innerHTML = slides
         .map(
-          (_, i) => `<button class="${i === 0 ? "active" : ""}" aria-label="Success story ${i + 1}"></button>`
+          (_, i) => `<button class="${i === 0 ? "active" : ""}" aria-label="${successPack.dotAria(i)}"></button>`
         )
         .join("");
     }
@@ -518,13 +600,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const isStackedLayout = () => window.matchMedia && window.matchMedia("(max-width: 900px)").matches;
 
-    const keywords = [
-      { text: "Schema Org", icon: "code" },
-      { text: "SEO Keywords", icon: "search" },
-      { text: "Core Contents", icon: "file-check" },
-      { text: "FAQ Logic", icon: "message-circle-question" },
-      { text: "JP Local", icon: "globe" }
-    ];
+    const keywordSets = {
+      ko: [
+        { text: "Schema Org", icon: "code" },
+        { text: "SEO Keywords", icon: "search" },
+        { text: "Core Contents", icon: "file-check" },
+        { text: "FAQ Logic", icon: "message-circle-question" },
+        { text: "JP Local", icon: "globe", accent: "jp" }
+      ],
+      en: [
+        { text: "Schema Org", icon: "code" },
+        { text: "SEO Keywords", icon: "search" },
+        { text: "Core Contents", icon: "file-check" },
+        { text: "FAQ Logic", icon: "message-circle-question" },
+        { text: "JP Local", icon: "globe", accent: "jp" }
+      ],
+      ja: [
+        { text: "スキーマ構造", icon: "code" },
+        { text: "SEOキーワード", icon: "search" },
+        { text: "コアコンテンツ", icon: "file-check" },
+        { text: "FAQ設計", icon: "message-circle-question" },
+        { text: "JPローカライズ", icon: "globe", accent: "jp" }
+      ]
+    };
+    const keywords = keywordSets[lang] || keywordSets.ko;
 
     const makeChip = (data) => {
       const chip = document.createElement("div");
@@ -535,7 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const makeOutput = (data) => {
       const out = document.createElement("div");
-      const isJP = data.text.toLowerCase().includes("jp");
+      const isJP = data.accent === "jp";
       out.className = `opt-output-chip${isJP ? " jp" : ""}`;
       out.innerHTML = `
         <div class="opt-output-meta">
@@ -656,7 +755,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("무료 AI 감사 요청이 접수되었습니다. 곧 연락드리겠습니다.");
+      const messageByLang = {
+        ko: "무료 AI 감사 요청이 접수되었습니다. 곧 연락드리겠습니다.",
+        en: "Your free AI audit request has been received. We'll contact you shortly.",
+        ja: "無料診断のご依頼を受け付けました。追ってご連絡いたします。"
+      };
+      alert(messageByLang[lang] || messageByLang.ko);
       contactForm.reset();
     });
   }
