@@ -226,6 +226,29 @@ p {
   width: 100%;
 }
 
+/* Mobile floating contact CTA */
+.floating-contact {
+  display: none;
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-right));
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 50;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--teal));
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 18px 34px rgba(15, 35, 62, 0.22);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.floating-contact.is-hidden {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
 /* Hero */
 .hero {
   padding: 70px 0 53px;
@@ -1180,6 +1203,20 @@ textarea:focus {
 
   .cta-header {
     display: none;
+  }
+
+  .floating-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-logo-mark {
+    position: static;
+    left: auto;
+    bottom: auto;
+    margin-top: 18px;
+    width: 72px;
   }
 
   .hero-grid {
@@ -2757,24 +2794,56 @@ textarea:focus {
 @media (max-width: 600px) {
   .optimization-widget {
     padding: 14px 12px;
-    min-height: 360px;
+    min-height: 0;
   }
 
   .opt-stage {
-    min-height: 250px;
+    min-height: 210px;
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .opt-stage-header {
+    gap: 7px;
+    margin-bottom: 2px;
+  }
+
+  .opt-stage-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 9px;
+  }
+
+  .opt-stage-icon i {
+    width: 13px;
+    height: 13px;
   }
 
   .opt-stage-title {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .opt-zone {
-    min-height: 160px;
+    min-height: 120px;
   }
 
   .opt-chip {
     font-size: 0.76rem;
     padding: 7px 10px;
+  }
+
+  .opt-output-list {
+    min-height: 0;
+    gap: 8px;
+  }
+
+  .opt-output-chip {
+    padding: 7px 9px;
+    border-radius: 10px;
+  }
+
+  .opt-output-meta {
+    font-size: 0.82rem;
   }
 
   .opt-center {
@@ -2798,8 +2867,9 @@ textarea:focus {
   }
 
   .opt-label {
-    bottom: -28px;
+    bottom: -22px;
     min-width: 160px;
+    padding: 9px 12px;
   }
 
   .opt-label-main {

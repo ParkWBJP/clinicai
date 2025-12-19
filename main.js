@@ -30,6 +30,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Mobile floating contact CTA: hide when contact section is visible
+  const floatingContact = document.querySelector(".floating-contact");
+  const contactSection = document.getElementById("contact");
+  if (floatingContact && contactSection) {
+    const setHidden = (hidden) => floatingContact.classList.toggle("is-hidden", hidden);
+
+    if ("IntersectionObserver" in window) {
+      const obs = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          setHidden(Boolean(entry && entry.isIntersecting));
+        },
+        { threshold: 0.12 }
+      );
+      obs.observe(contactSection);
+    } else {
+      const onScroll = () => {
+        const rect = contactSection.getBoundingClientRect();
+        const hide = rect.top < window.innerHeight * 0.35 && rect.bottom > 0;
+        setHidden(hide);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+  }
+
   // FAQ 아코디언
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach((item) => {
